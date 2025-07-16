@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: your-django-app
+    name: school
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn school.wsgi:application
