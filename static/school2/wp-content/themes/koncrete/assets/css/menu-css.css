@@ -1,0 +1,11 @@
+.menu-top-menu-container {
+    width: 87%;
+    max-width: 100%;
+}
+
+.main-header .main-navigation-area .main-navigation nav>ul>li>a {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 8px;
+    text-transform: capitalize;
+}

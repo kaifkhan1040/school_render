@@ -1,0 +1,491 @@
+{% load static %}
+<!DOCTYPE html><html lang="en"><head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- title -->
+    <title>Eduka - School, College, University And Courses HTML5 Template</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'school/school/images/favicon.png' %}">
+
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'school/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'school/css/all-fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'school/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'school/css/magnific-popup.min.css' %}">
+    <link rel="stylesheet" href="{% static 'school/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'school/css/style.css' %}">
+    {% block style %}{% endblock style %}
+</head>
+
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div class="loader-book">
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+            <div class="loader-book-page"></div>
+        </div>
+    </div>
+    <!-- preloader end -->
+
+
+    <!-- header area -->
+    <!-- <style>
+ 
+
+      .header-2025 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 2.5rem;
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+        backdrop-filter: blur(12px);
+        border-radius: 1.5rem;
+        margin: 2rem auto 0 auto;
+        max-width: 1100px;
+        position: relative;
+      }
+  
+      .logo-2025 {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 1.7rem;
+        font-weight: 800;
+        color: #1a237e;
+        letter-spacing: 1px;
+        user-select: none;
+      }
+  
+      .logo-2025 img {
+        width: 38px;
+        height: 38px;
+        filter: drop-shadow(0 2px 8px #1a237e22);
+      }
+  
+      .nav-2025 {
+        display: flex;
+        gap: 2.5rem;
+      }
+  
+      .nav-2025 a {
+        text-decoration: none;
+        color: #1a237e;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 1.2rem;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      }
+  
+      .nav-2025 a:hover {
+        background: linear-gradient(90deg, #5c6bc0 0%, #64b5f6 100%);
+        color: #fff;
+        box-shadow: 0 2px 12px #5c6bc033;
+      }
+  
+      .menu-toggle {
+        display: none;
+      }
+  
+      .menu-icon {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        gap: 6px;
+        z-index: 10;
+      }
+  
+      .menu-icon span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: #1a237e;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+  
+      /* Responsive styles */
+      @media (max-width: 800px) {
+        .header-2025 {
+          padding: 1rem 1.2rem;
+          max-width: 98vw;
+        }
+        .nav-2025 {
+          position: absolute;
+          top: 100%;
+          right: 1.2rem;
+          background: rgba(255,255,255,0.95);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+          border-radius: 1.2rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          width: 210px;
+          padding: 1.2rem 0;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(-10px);
+          transition: all 0.3s;
+        }
+        .nav-2025 a {
+          width: 100%;
+          padding: 1rem 2rem;
+          border-radius: 0;
+          font-size: 1.08rem;
+        }
+        .menu-icon {
+          display: flex;
+        }
+        .menu-toggle:checked + .menu-icon span:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+        .menu-toggle:checked + .menu-icon span:nth-child(2) {
+          opacity: 0;
+        }
+        .menu-toggle:checked + .menu-icon span:nth-child(3) {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+        .menu-toggle:checked ~ .nav-2025 {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
+      }
+    </style>
+     <header class="header-2025">
+      <div class="logo-2025">
+        <img src="https://img.icons8.com/ios-filled/50/1a237e/school.png" alt="School Logo" />
+        <span>SchoolName</span>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-2025">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Admissions</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header> -->
+
+      
+    <!-- header area end -->
+
+
+    <!-- popup search -->
+    <!-- <div class="search-popup">
+        <button class="close-search"><span class="far fa-times"></span></button>
+        <form action="#">
+            <div class="form-group">
+                <input type="search" name="search-field" placeholder="Search Here..." required="">
+                <button type="submit"><i class="far fa-search"></i></button>
+            </div>
+        </form>
+    </div> -->
+    <!-- popup search end -->
+
+    <style>
+      .header-2025 {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2.5rem;
+    background: rgb(49 46 46 / 70%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    max-width: 1100px;
+    width: calc(100% - 4rem);
+    z-index: 99;
+  }
+  
+  .logo-2025 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #f8f8f9;
+  }
+  
+  .logo-2025 img {
+    width: 61px;
+    height: 55px;
+  }
+  
+  .nav-2025 {
+    display: flex;
+    gap: 2.5rem;
+  }
+  
+  .nav-2025 a {
+    text-decoration: none;
+    color: #f8f8f9;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem -2.8rem;
+    border-radius: 1.2rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .nav-2025 a:hover {
+    background: #5c6bc0;
+    color: white;
+  }
+  
+  /* Hamburger toggle for mobile */
+  .menu-toggle { display: none; }
+  .menu-icon { display: none; }
+  
+  @media (max-width: 800px) {
+    .nav-2025 {
+      position: absolute;
+      top: 100%;
+      right: 1.2rem;
+      background: rgb(8 8 8 / 95%);
+      border-radius: 1.2rem;
+      flex-direction: column;
+      gap: 0;
+      width: 210px;
+      padding: 1.2rem 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: all 0.3s;
+    }
+    .logo-2025 {
+      font-size: 1rem;
+    }
+  
+    .nav-2025 a {
+      width: 100%;
+      padding: 0.5rem 3.2rem;
+      border-radius: 0;
+      font-size: 1.08rem;
+    }
+  
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      gap: 6px;
+      z-index: 10;
+    }
+  
+    .menu-icon span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: #1a237e;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+  
+    .menu-toggle:checked + .menu-icon span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+  
+    .menu-toggle:checked + .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menu-toggle:checked + .menu-icon span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  
+    .menu-toggle:checked ~ .nav-2025 {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+  
+  </style>
+  
+  <div class="hero-section">
+      <!-- ✅ Floating Header over Owl Carousel -->
+      <header class="header-2025">
+          <div class="logo-2025">
+              <img src="{% static 'school/images/logo_new1.png' %}" alt="Logo" />
+              <span>LITTLE STAR PUBLIC SCHOOL</span>
+          </div>
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+          </label>
+          <nav class="nav-2025">
+              <a href="{% url 'web:index' %}">Home</a>
+              <a href="{% url 'web:addmission1' %}">Admissions</a>
+              <a href="{% url 'web:gallery' %}">Gallery</a>
+              <a href="{% url 'web:contact' %}">Contact-Us</a>
+              <a href="{% url 'web:aboutus' %}">About</a>
+          </nav>
+      </header>
+  
+      <!-- 🖼️ Owl Carousel Slides (your original code stays the same) -->
+     
+  </div>
+    <main class="main">
+        {% block content %}{% endblock content %}
+
+    </main>
+
+
+    <!-- footer area -->
+    <footer class="footer-area">
+        <div class="footer-shape">
+            <img src="{% static 'school/images/03_1.png' %}" alt="">
+        </div>
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row footer-widget-wrapper pt-100 pb-70">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="footer-widget-box about-us">
+                            <a href="#" class="footer-logo">
+                                <img src="{% static 'school/images/logo_new1.png' %}" alt="">
+                            </a>
+                            <p class="mb-3">
+                                We are many variations of passages available but the majority have suffered alteration
+                                in some form by injected humour words believable.
+                            </p>
+                            <ul class="footer-contact">
+                                <li><a href="tel:+917011948893"><i class="far fa-phone"></i>+91 7011948893</a></li>
+                                <li><i class="far fa-map-marker-alt"></i>226/2, Firoz gandhi colony, phase 2,Gurugram (HR)-12201</li>
+                                <li><a href="mailto: Littlestarpre03@gmail.com"><i class="far fa-envelope"></i><span class="__cf_email__">Littlestarpre03@gmail.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Quick Links</h4>
+                            <ul class="footer-list">
+                                <!-- <li><a href="#"><i class="fas fa-caret-right"></i> About Us</a></li> -->
+                                <li><a href="{% url 'web:index' %}"><i class="fas fa-caret-right"></i>Home</a></li>
+                                <li><a href="{% url 'web:addmission1' %}"><i class="fas fa-caret-right"></i>Admissions</a></li>
+                                <li><a href="{% url 'web:gallery' %}"><i class="fas fa-caret-right"></i>Gallery</a></li>
+                                <li><a href="{% url 'web:aboutus' %}"><i class="fas fa-caret-right"></i>About</a></li>
+                                <li><a href="{% url 'web:contact' %}"><i class="fas fa-caret-right"></i>Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget-box list">
+                            <h4 class="footer-widget-title">Newsletter</h4>
+                            <div class="footer-newsletter">
+                                <p>Subscribe Our Newsletter To Get Latest Update And News</p>
+                                <div class="subscribe-form">
+                                    <form action="#">
+                                        <input type="email" class="form-control" placeholder="Your Email">
+                                        <button class="theme-btn" type="submit">
+                                            Subscribe Now <i class="far fa-paper-plane"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="copyright-wrapper">
+                    <div class="row">
+                        <div class="col-md-6 align-self-center">
+                            <p class="copyright-text">
+                                � Copyright <span id="date"></span> <a href="#"> Eduka </a> All Rights Reserved.
+                            </p>
+                        </div>
+                        <div class="col-md-6 align-self-center">
+                            <ul class="footer-social">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+
+    <!-- scroll-top -->
+    <a href="#" id="scroll-top"><i class="far fa-arrow-up-from-arc"></i></a>
+    <!-- scroll-top end -->
+
+
+    <!-- js -->
+    <script data-cfasync="false" src="{% static 'school/js/email-decode.min.js' %}"></script><script src="{% static 'school/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'school/js/modernizr.min.js' %}"></script>
+    <script src="{% static 'school/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'school/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'school/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'school/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'school/js/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'school/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'school/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'school/js/counter-up.js' %}"></script>
+    <script src="{% static 'school/js/wow.min.js' %}"></script>
+    <script src="{% static 'school/js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+            let messageType = "{{ message.tags }}";  // Django message type (error, success, etc.)
+            let title = "Notification";  // Default title
+            let icon = "info";  // Default icon
+
+            // Set title and icon based on message type
+            if (messageType.includes("error")) {
+                title = "Error!";
+                icon = "error";
+            } else if (messageType.includes("success")) {
+                title = "Success!";
+                icon = "success";
+            } else if (messageType.includes("warning")) {
+                title = "Warning!";
+                icon = "warning";
+            } else if (messageType.includes("info")) {
+                title = "Information!";
+                icon = "info";
+            }
+
+            Swal.fire({
+                title: title,
+                text: "{{ message|striptags }}",  // Remove unwanted HTML
+                icon: icon
+            });
+        {% endfor %}
+    </script>
+    {% endif %}
+    {% block scriptjs %}{% endblock scriptjs %}
+
+</body></html>

@@ -1,0 +1,498 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 03/07/2018 13:21
+  	*/
+
+	@font-face {
+	    font-family: "Flaticon";
+	    src: url("./fonts/Flaticon.eot");
+	    src: url("./fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("./fonts/Flaticon.woff") format("woff"), url("./fonts/Flaticon.ttf") format("truetype");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	    @font-face {
+	        font-family: "Flaticon";
+	        src: url("./fonts/Flaticon.svg#Flaticon") format("svg");
+	    }
+	}
+
+	[class^="flaticon-"]:before,
+	[class*=" flaticon-"]:before,
+	[class^="flaticon-"]:after,
+	[class*=" flaticon-"]:after {
+	    font-family: Flaticon;
+	    font-size: 20px;
+	    font-style: normal;
+	}
+
+	.flaticon-success:before {
+	    content: "\f100";
+	}
+
+	.flaticon-medal-1:before {
+	    content: "\f101";
+	}
+
+	.flaticon-settings:before {
+	    content: "\f102";
+	}
+
+	.flaticon-like:before {
+	    content: "\f103";
+	}
+
+	.flaticon-power:before {
+	    content: "\f104";
+	}
+
+	.flaticon-train:before {
+	    content: "\f105";
+	}
+
+	.flaticon-team-1:before {
+	    content: "\f106";
+	}
+
+	.flaticon-worker:before {
+	    content: "\f107";
+	}
+
+	.flaticon-tower-crane:before {
+	    content: "\f108";
+	}
+
+	.flaticon-steamroller:before {
+	    content: "\f109";
+	}
+
+	.flaticon-industry:before {
+	    content: "\f10a";
+	}
+
+	.flaticon-green-energy:before {
+	    content: "\f10b";
+	}
+
+	.flaticon-cruise:before {
+	    content: "\f10c";
+	}
+
+	.flaticon-link-interface-symbol-of-chain-in-diagonal:before {
+	    content: "\f10d";
+	}
+
+	.flaticon-message:before {
+	    content: "\f10e";
+	}
+
+	.flaticon-text-quotes:before {
+	    content: "\f10f";
+	}
+
+	.flaticon-quotes:before {
+	    content: "\f110";
+	}
+
+	.flaticon-right-quote-sign:before {
+	    content: "\f111";
+	}
+
+	.flaticon-quotation-mark:before {
+	    content: "\f112";
+	}
+
+	.flaticon-play-button:before {
+	    content: "\f113";
+	}
+
+	.flaticon-add:before {
+	    content: "\f114";
+	}
+
+	.flaticon-medal:before {
+	    content: "\f115";
+	}
+
+	.flaticon-handshake:before {
+	    content: "\f116";
+	}
+
+	.flaticon-left-arrow:before {
+	    content: "\f117";
+	}
+
+	.flaticon-right-arrow:before {
+	    content: "\f118";
+	}
+
+	.flaticon-shopping-cart:before {
+	    content: "\f119";
+	}
+
+	.flaticon-magnifying-glass:before {
+	    content: "\f11a";
+	}
+
+	.flaticon-clock:before {
+	    content: "\f11b";
+	}
+
+	.flaticon-phone-call:before {
+	    content: "\f11c";
+	}
+
+	/*
+    Flaticon icon font: Flaticon service
+    Creation date: 20/02/2019 09:40
+    */
+
+	@font-face {
+	    font-family: "flaticon-service";
+	    src: url("./fonts/flaticon-service.eot");
+	    src: url("./fonts/flaticon-service.eot?#iefix") format("embedded-opentype"), url("./fonts/flaticon-service.woff2") format("woff2"), url("./fonts/flaticon-service.woff") format("woff"), url("./fonts/flaticon-service.ttf") format("truetype"), url("./fonts/flaticon-service.svg#Flaticon") format("svg");
+	    font-weight: normal;
+	    font-style: normal;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+	    @font-face {
+	        font-family: "flaticon-service";
+	        src: url("./fonts/flaticon-service.svg#Flaticon") format("svg");
+	    }
+	}
+
+	[class^="flaticon-service-"]:before,
+	[class*=" flaticon-service-"]:before,
+	[class^="flaticon-service-"]:after,
+	[class*=" flaticon-service-"]:after {
+	    font-family: "flaticon-service";
+	    font-size: 20px;
+	    font-style: normal;
+	    /*margin-left: 20px;*/
+	}
+
+	.flaticon-service-3d:before {
+	    content: "\f100";
+	}
+
+	.flaticon-service-think:before {
+	    content: "\f101";
+	}
+
+	.flaticon-service-plan:before {
+	    content: "\f102";
+	}
+
+	.flaticon-service-paint:before {
+	    content: "\f103";
+	}
+
+	.flaticon-service-modeling:before {
+	    content: "\f104";
+	}
+
+	.flaticon-service-stationery:before {
+	    content: "\f105";
+	}
+
+	.flaticon-service-exhibition:before {
+	    content: "\f106";
+	}
+
+	.flaticon-service-thinking:before {
+	    content: "\f107";
+	}
+
+	.flaticon-service-graphic-design:before {
+	    content: "\f108";
+	}
+
+	.flaticon-service-deadline:before {
+	    content: "\f109";
+	}
+
+	.flaticon-service-website:before {
+	    content: "\f10a";
+	}
+
+	.flaticon-service-search:before {
+	    content: "\f10b";
+	}
+
+	.flaticon-service-target:before {
+	    content: "\f10c";
+	}
+
+	.flaticon-service-pencil:before {
+	    content: "\f10d";
+	}
+
+	.flaticon-service-customer-support:before {
+	    content: "\f10e";
+	}
+
+	.flaticon-service-support:before {
+	    content: "\f10f";
+	}
+
+	.flaticon-service-repairing-service:before {
+	    content: "\f110";
+	}
+
+	.flaticon-service-information:before {
+	    content: "\f111";
+	}
+
+	.flaticon-service-customer-support-1:before {
+	    content: "\f112";
+	}
+
+	.flaticon-service-24-hours:before {
+	    content: "\f113";
+	}
+
+	.flaticon-service-chat:before {
+	    content: "\f114";
+	}
+
+	.flaticon-service-covered-food-tray-on-a-hand-of-hotel-room-service:before {
+	    content: "\f115";
+	}
+
+	.flaticon-service-book:before {
+	    content: "\f116";
+	}
+
+	.flaticon-service-customer-support-2:before {
+	    content: "\f117";
+	}
+
+	.flaticon-service-stopclock:before {
+	    content: "\f118";
+	}
+
+	.flaticon-service-support-1:before {
+	    content: "\f119";
+	}
+
+	.flaticon-service-car:before {
+	    content: "\f11a";
+	}
+
+	.flaticon-service-info:before {
+	    content: "\f11b";
+	}
+
+	.flaticon-service-hotel:before {
+	    content: "\f11c";
+	}
+
+	.flaticon-service-van:before {
+	    content: "\f11d";
+	}
+
+	.flaticon-service-isp:before {
+	    content: "\f11e";
+	}
+
+	.flaticon-service-management-service:before {
+	    content: "\f11f";
+	}
+
+	.flaticon-service-home:before {
+	    content: "\f120";
+	}
+
+	.flaticon-service-building:before {
+	    content: "\f121";
+	}
+
+	.flaticon-service-help:before {
+	    content: "\f122";
+	}
+
+	.flaticon-service-sketch:before {
+	    content: "\f123";
+	}
+
+	.flaticon-service-home-1:before {
+	    content: "\f124";
+	}
+
+	.flaticon-service-gears:before {
+	    content: "\f125";
+	}
+
+	.flaticon-service-skyline:before {
+	    content: "\f126";
+	}
+
+	.flaticon-service-sketch-1:before {
+	    content: "\f127";
+	}
+
+	.flaticon-service-timing-belt:before {
+	    content: "\f128";
+	}
+
+	.flaticon-service-safety:before {
+	    content: "\f129";
+	}
+
+	.flaticon-service-energy-saving:before {
+	    content: "\f12a";
+	}
+
+	.flaticon-service-paint-roller:before {
+	    content: "\f12b";
+	}
+
+	.flaticon-service-cogwheel:before {
+	    content: "\f12c";
+	}
+
+	.flaticon-service-manufacture:before {
+	    content: "\f12d";
+	}
+
+	.flaticon-service-cogwheels:before {
+	    content: "\f12e";
+	}
+
+	.flaticon-service-shovel:before {
+	    content: "\f12f";
+	}
+
+	.flaticon-service-antenna:before {
+	    content: "\f130";
+	}
+
+	.flaticon-service-seat:before {
+	    content: "\f131";
+	}
+
+	.flaticon-service-oil-gauge:before {
+	    content: "\f132";
+	}
+
+	.flaticon-service-soil:before {
+	    content: "\f133";
+	}
+
+	.flaticon-service-cutting:before {
+	    content: "\f134";
+	}
+
+	.flaticon-service-farming-and-gardening:before {
+	    content: "\f135";
+	}
+
+	.flaticon-service-conveyor:before {
+	    content: "\f136";
+	}
+
+	.flaticon-service-wrench:before {
+	    content: "\f137";
+	}
+
+	.flaticon-service-car-1:before {
+	    content: "\f138";
+	}
+
+	.flaticon-service-builder:before {
+	    content: "\f139";
+	}
+
+	.flaticon-service-worker:before {
+	    content: "\f13a";
+	}
+
+	.flaticon-service-museum:before {
+	    content: "\f13b";
+	}
+
+	.flaticon-service-delivery-truck:before {
+	    content: "\f13c";
+	}
+
+	.flaticon-service-development:before {
+	    content: "\f13d";
+	}
+
+	.flaticon-service-free-delivery-truck:before {
+	    content: "\f13e";
+	}
+
+	.flaticon-service-tire:before {
+	    content: "\f13f";
+	}
+
+	.flaticon-service-lightbulb-idea:before {
+	    content: "\f140";
+	}
+
+	.flaticon-service-bank-building:before {
+	    content: "\f141";
+	}
+
+	.flaticon-service-signing-the-contract:before {
+	    content: "\f142";
+	}
+
+	.flaticon-service-businessman-success:before {
+	    content: "\f143";
+	}
+
+	.flaticon-service-dollar-sign-and-piles-of-coins:before {
+	    content: "\f144";
+	}
+
+	.flaticon-service-office-block:before {
+	    content: "\f145";
+	}
+
+	.flaticon-service-office-chair:before {
+	    content: "\f146";
+	}
+
+	.flaticon-service-labyrinth-and-arrow:before {
+	    content: "\f147";
+	}
+
+	.flaticon-service-document-with-paperclip:before {
+	    content: "\f148";
+	}
+
+	.flaticon-service-noisy-megaphone:before {
+	    content: "\f149";
+	}
+
+	.flaticon-service-hot-cup-of-coffee:before {
+	    content: "\f14a";
+	}
+
+	.flaticon-service-increased-revenue:before {
+	    content: "\f14b";
+	}
+
+	.flaticon-service-tower:before {
+	    content: "\f14c";
+	}
+
+	.flaticon-service-factory-building:before {
+	    content: "\f14d";
+	}
+
+	.flaticon-service-plug:before {
+	    content: "\f14e";
+	}
+
+	.flaticon-service-power:before {
+	    content: "\f14f";
+	}
+
+	.flaticon-service-green-energy:before {
+	    content: "\f150";
+	}

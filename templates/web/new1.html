@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sticky Glassmorphism Header 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 200vh;
+      /* background: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 100%); */
+    }
+    .glass-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2.2rem;
+      background: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+      backdrop-filter: blur(18px) saturate(1.5);
+      border-bottom: 1.5px solid #e0e7ff;
+      transition: background 0.3s;
+    }
+    .logo-glass {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #3730a3;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+    .logo-glass img {
+      width: 32px;
+      height: 32px;
+      display: block;
+    }
+    .nav-glass {
+      display: flex;
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .nav-glass a {
+      text-decoration: none;
+      color: #3730a3;
+      font-weight: 600;
+      font-size: 1.08rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+    }
+    .nav-glass a::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+      border-radius: 2px;
+      box-shadow: 0 0 8px #6366f1aa, 0 0 16px #06b6d488;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+    }
+    .nav-glass a:hover {
+      color: #06b6d4;
+    }
+    .nav-glass a:hover::after {
+      width: 100%;
+    }
+    .menu-toggle-glass {
+      display: none;
+    }
+    .menu-icon-glass {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .menu-icon-glass span {
+      display: block;
+      height: 4px;
+      width: 32px;
+      background: #6366f1;
+      border-radius: 2px;
+      margin: 4px 0;
+      transition: 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+      position: relative;
+    }
+    /* Responsive styles */
+    @media (max-width: 900px) {
+      .glass-header {
+        padding: 1rem 1.1rem;
+      }
+    }
+    @media (max-width: 800px) {
+      .nav-glass {
+        position: absolute;
+        top: 100%;
+        right: 1.1rem;
+        background: rgba(255,255,255,0.95);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+        border-radius: 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 210px;
+        padding: 1.2rem 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s;
+      }
+      .nav-glass a {
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 0;
+        font-size: 1.08rem;
+      }
+      .menu-icon-glass {
+        display: flex;
+      }
+      /* Hamburger animation */
+      .menu-toggle-glass:checked + .menu-icon-glass span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .menu-toggle-glass:checked + .menu-icon-glass span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0.5);
+      }
+      .menu-toggle-glass:checked + .menu-icon-glass span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      .menu-toggle-glass:checked ~ .nav-glass {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="glass-header">
+    <div class="logo-glass">
+      <img src="https://img.icons8.com/ios-filled/50/6366f1/school.png" alt="School Logo" />
+      <span>SchoolName</span>
+    </div>
+    <input type="checkbox" id="menu-toggle-glass" class="menu-toggle-glass" />
+    <label for="menu-toggle-glass" class="menu-icon-glass" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav class="nav-glass">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Programs</a>
+      <a href="#">Admissions</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <main style="padding:2rem;max-width:700px;margin:auto;">
+    <h1>Welcome to SchoolName</h1>
+    <p>Scroll down to see the sticky glassmorphism header in action. This header stays at the top, blurs the background, and features a glowing underline on navigation hover.</p>
+    <p style="margin-top:3rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi. (Add more content to test stickiness.)</p>
+  </main>
+</body>
+</html>
