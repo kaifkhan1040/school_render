@@ -33,7 +33,7 @@ class Contactus(models.Model):
     parents_name = models.CharField(max_length=255)
     parents_mobile_number = models.CharField(max_length=10)
     child_date_of_birth = models.DateField(null=True,blank=True)
-    select_class_looking_for  = models.CharField(choices=[('P.Nursery','P.Nursery'),('Nursery','Nursery'),('LKG','LKG'),('UKG','UKG'),('1ST','1ST'),('2ND','2ND'),('3RD','3RD'),('4TH','4TH'),('5TH','5TH')])
+    select_class_looking_for  = models.CharField(max_length=50,choices=[('P.Nursery','P.Nursery'),('Nursery','Nursery'),('LKG','LKG'),('UKG','UKG'),('1ST','1ST'),('2ND','2ND'),('3RD','3RD'),('4TH','4TH'),('5TH','5TH')])
 
     def __str__(self):
         return self.name

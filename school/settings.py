@@ -16,7 +16,11 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+try:
+    import pymysql
+    pymysql.install_as_MySQLdb()
+except:
+    pass
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -100,10 +104,20 @@ WSGI_APPLICATION = 'school.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
-    )
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        default=os.environ.get('DATABASE_URL')
+#    )
+#}
+DATABASES ={
+        'default':{
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'school',
+                'USER': 'root',
+                'PASSWORD': 'schoolpass',
+                'HOST':'localhost',
+                'PORT':'3306',
+        }
 }
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/'}
@@ -157,3 +171,5 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600   # 100 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600   # 100 MB
