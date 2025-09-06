@@ -43,7 +43,7 @@ def send(
         bcc = []
 
     try:
-        msg = EmailMultiAlternatives(subject, text_body, to=to)
+        msg = EmailMultiAlternatives(subject, str(text_body), to=to)
         if cc:
             msg.cc = cc
 
@@ -70,14 +70,37 @@ def send(
         return False
 
 
-def send_from_template(to, subject, template, context, **kwargs):
+def send_from_template(to, subject, template, context,ccmail=None, **kwargs):
     # print template
     html_body = render_to_string(template, context)
     print("html body: " + html_body)
-    send(to, subject, html_body, **kwargs)
+    send(to, subject, html_body, cc=ccmail,**kwargs)
     return print('send') 
 
 
+def NoticeEmailSend(data,maillist):
+    mail_list, email_subject = maillist, 'School Notice – '+str(data.title)
+    email_template = "email/notice.html"
+    context = {
+        "data": data,
+    }
+    Thread(
+        target=send_from_template,
+        args=(mail_list, email_subject, email_template, context),
+    ).start()
+
+def CountactusEmail(data):
+    mail_list, email_subject = 'Deepakumari10.lsps@gmail.com', 'New Admission Enquiry Received'
+    ccmail=['Littlestarpre03@gmail.com','soniya02.lsps@gmail.com']
+
+    email_template = "email/countact.html"
+    context = {
+        "data": data,
+    }
+    Thread(
+        target=send_from_template,
+        args=(mail_list, email_subject, email_template, context,ccmail),
+    ).start()
 
 def verification_mail(token,email):
     mail_list, email_subject = email, 'Registration Verification'

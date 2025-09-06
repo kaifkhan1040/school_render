@@ -7,7 +7,8 @@ from django.contrib import messages
 from customadmin.models import Gallery,Event,Notice,Testimonie,MissionAndVission,Academics
 from django.http import FileResponse, Http404
 import os
-
+from users.email import CountactusEmail
+# from users.email import ContactusEmail
 def chunked(lst, n):
         return [lst[i:i+n] for i in range(0, len(lst), n)]
 # from customadmin.models import CarCompany, CarModel, Trim, ServiceCategory, ServiceItem, TrimServicePrice
@@ -58,8 +59,8 @@ def contact(request):
     if request.method=="POST":
         form=ContactusForm(request.POST)
         if form.is_valid():
-            form.save()
-
+            data=form.save()
+            CountactusEmail(data)
             messages.success(request, f'Thank you for reaching out to us. Our team will get back to you shortly.')
             return redirect('web2:index')
         else:

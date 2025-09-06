@@ -6,6 +6,12 @@ urlpatterns = [
     path('add-event/', views.add_event, name='add_event'),
     path('update-event/<int:id>/', views.add_event, name='update_event'),
     path('delete-event/<int:id>/', views.delete_event, name='delete_event'),
+
+    path('noticeemail/', views.noticeemail, name='noticeemail'),
+    path('add-noticeemail/', views.add_noticeemail, name='add_noticeemail'),
+    path('update-noticeemail/<int:id>/', views.add_noticeemail, name='update_noticeemail'),
+    path('delete-noticeemail/<int:id>/', views.delete_noticeemail, name='delete_noticeemail'),
+
     path('gallery/', views.gallery, name='gallery'),
     path('add-gallery/', views.add_gallery, name='add_gallery'),
     path('update-gallery/<int:id>/', views.add_gallery, name='update_gallery'),

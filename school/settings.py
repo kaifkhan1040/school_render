@@ -62,6 +62,14 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_PASSWORD = 'Littlestar@2025'
+EMAIL_HOST = 'smtp.hostinger.com'
+EMAIL_HOST_USER = 'info@lspsgurugram.in'
+DEFAULT_FROM_EMAIL = "info@lspsgurugram.in"
+EMAIL_PORT = 587
+
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -96,12 +104,12 @@ WSGI_APPLICATION = 'school.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 #DATABASES = {
@@ -109,16 +117,16 @@ WSGI_APPLICATION = 'school.wsgi.application'
 #        default=os.environ.get('DATABASE_URL')
 #    )
 #}
-DATABASES ={
-        'default':{
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'school',
-                'USER': 'root',
-                'PASSWORD': 'schoolpass',
-                'HOST':'localhost',
-                'PORT':'3306',
-        }
-}
+# DATABASES ={
+#         'default':{
+#                 'ENGINE': 'django.db.backends.mysql',
+#                 'NAME': 'school',
+#                 'USER': 'root',
+#                 'PASSWORD': 'schoolpass',
+#                 'HOST':'localhost',
+#                 'PORT':'3306',
+#         }
+# }
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': '/'}
 

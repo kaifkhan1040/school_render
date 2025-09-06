@@ -4,7 +4,7 @@ from django.forms import EmailInput
 from django.forms import ModelForm, TextInput, EmailInput, CharField, PasswordInput, ChoiceField, BooleanField, \
     NumberInput, DateInput
 from .models import Event,Gallery,Contactus,Course,Notice,Testimonie,MissionAndVission,Academics,\
-    SubAcademics,AcademicsItem
+    SubAcademics,AcademicsItem,NoticeEmail
 from ckeditor.widgets import CKEditorWidget
 from datetime import date, timedelta
 from django.core.exceptions import ValidationError
@@ -56,6 +56,15 @@ class GalleryForm(ModelForm):
             raise forms.ValidationError("Only MP4 files are allowed.")
         return video
 
+class NoticeEmailForm(ModelForm):
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].widget.attrs.update({'class': 'form-control valid','placeholder':'Enter Email'})
+
+    class Meta:
+        model=NoticeEmail
+        fields='__all__'
 
 class ContactusForm(ModelForm):
     def __init__(self, *args, **kwargs):

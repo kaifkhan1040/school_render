@@ -51,6 +51,10 @@ class Notice(models.Model):
 
     def __str__(self):
         return self.title
+    
+class NoticeEmail(models.Model):
+    email=models.CharField(max_length=255)
+    
 
 
 class Course(models.Model):

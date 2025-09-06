@@ -44,3 +44,5 @@ def loginPage(request):
             messages.error(request, msg)
     return render(request, 'registration/login.html', {'user': request.user})
 
+def email(request):
+    return render(request,'email/notice.html')

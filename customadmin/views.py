@@ -2,15 +2,59 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
-from .models import Event,Gallery,Contactus,Course,Notice,Testimonie,MissionAndVission,Academics,SubAcademics,AcademicsItem
+from .models import Event,Gallery,Contactus,Course,Notice,Testimonie,MissionAndVission,Academics,SubAcademics,AcademicsItem,NoticeEmail
 from .forms import EventForm,GalleryForm,ContactusForm,CourseForm,NoticeForm,TestimonieForm,MissionAndVission,MissionAndVissionForm,\
-    AcademicsItemForm,AcademicsForm,SubAcademicsForm
+    AcademicsItemForm,AcademicsForm,SubAcademicsForm,NoticeEmailForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import JsonResponse
+from django.core.mail import send_mail
+from users.email import NoticeEmailSend
 # Create your views here.
 def index(request):
     return render(request,'customadmin/index.html')
+
+def noticeemail(request):
+    event = NoticeEmail.objects.all()
+    return render(request,'customadmin/noticeemaillist.html',{'event':event})
+
+def add_noticeemail(request,id=None):
+    print('run')
+    if request.method == "POST":
+        print('post')
+        print(request.POST)
+        obj=None
+        if id:
+            obj = get_object_or_404(NoticeEmail, id=id)
+            form = NoticeEmailForm(request.POST,instance=obj)
+        else:
+            form = NoticeEmailForm(request.POST)
+        if form.is_valid():
+            data=form.save()
+            
+            messages.success(request, f'NoticeEmail has been Added successfully!')
+            return redirect('customadmin:noticeemail')
+        else:
+            print('errr',form.errors)
+
+            messages.error(request, f'{form.errors}')
+    else:
+        obj=None
+        if id:
+            obj = get_object_or_404(NoticeEmail, id=id)
+            form = NoticeEmailForm(instance=obj)
+        else:
+            form = NoticeEmailForm()
+
+    return render(request, 'customadmin/noticeemail_add.html', {'form': form,'obj':obj})
+
+def delete_noticeemail(request,id=None):
+    if id:
+        obj = get_object_or_404(NoticeEmail, id=id)
+        obj.delete()
+
+        messages.success(request, f'NoticeEmail has been removed successfully!')
+        return redirect('customadmin:noticeemail')
 
 def event(request):
     event = Event.objects.all()
@@ -193,6 +237,8 @@ def notice(request):
 
 def add_notice(request,id=None):
     print('run')
+    maillist=[i.email for i in NoticeEmail.objects.all()]
+    print(maillist)
     if request.method == "POST":
         print('post')
         print(request.POST)
@@ -204,7 +250,11 @@ def add_notice(request,id=None):
         else:
             form = NoticeForm(request.POST,request.FILES)
         if form.is_valid():
-            form.save()
+            data=form.save()
+            try:
+                NoticeEmailSend(data,maillist)
+            except Exception as e:
+                print('error:',e)
 
             messages.success(request, f'notice been updated successfully!')
             return redirect('customadmin:notice')
