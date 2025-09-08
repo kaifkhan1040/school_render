@@ -84,7 +84,7 @@ class Academics(models.Model):
         return self.name
 
 class SubAcademics(models.Model):
-    academics = models.ForeignKey(Academics,on_delete=models.CASCADE)
+    academics = models.ForeignKey(Academics,on_delete=models.CASCADE,related_name="subacademics")
     name = models.CharField(max_length=150)
     file= models.FileField(upload_to='academics/sub/',null=True,blank=True)
 
@@ -92,7 +92,7 @@ class SubAcademics(models.Model):
         return self.name
 
 class AcademicsItem(models.Model):
-    subacademics =models.ForeignKey(SubAcademics,on_delete=models.CASCADE)
+    subacademics =models.ForeignKey(SubAcademics,on_delete=models.CASCADE,related_name="items")
     name = models.CharField(max_length=150)
     file= models.FileField(upload_to='academics/main/',null=True,blank=True)
 
