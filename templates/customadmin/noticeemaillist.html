@@ -40,11 +40,15 @@
                                 <div class="col-md-4 user_role">
                                     NoticeEmail
                                 </div>
-                                <div class="col-md-6 user_plan">
+                                <div class="col-md-4 user_plan">
                                 </div>
-                                <div class="col-md-2 user_status">
+                                <div class="col-md-4 user_status">
                                     <a href="{% url 'customadmin:add_noticeemail' %}">
-                                        <button class="btn btn-primary w-80 waves-effect waves-float waves-light" >Add Email</button></a>
+                                        <button class="btn btn-primary w-80 waves-effect waves-float waves-light" >Add Email</button>
+                                    </a>
+                                    <a href="{% url 'customadmin:bulk_upload_emails' %}">
+                                        <button class="btn btn-primary w-80 waves-effect waves-float waves-light" >Bulk Upload</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

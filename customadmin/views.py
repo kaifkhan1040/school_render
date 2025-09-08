@@ -10,6 +10,10 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from users.email import NoticeEmailSend
+import csv, io
+from .forms import CSVUploadForm
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 # Create your views here.
 def index(request):
     return render(request,'customadmin/index.html')
@@ -59,6 +63,44 @@ def delete_noticeemail(request,id=None):
 def event(request):
     event = Event.objects.all()
     return render(request,'customadmin/eventlist.html',{'event':event})
+
+def bulk_upload_emails(request):
+    if request.method == "POST":
+        formscv = CSVUploadForm(request.POST, request.FILES)
+        if formscv.is_valid():
+            csv_file = request.FILES["file"]
+
+            if not csv_file.name.endswith('.csv'):
+                messages.error(request, "This is not a CSV file")
+                return redirect("customadmin:bulk_upload_emails")
+
+            # Read file
+            data_set = csv_file.read().decode("UTF-8")
+            io_string = io.StringIO(data_set)
+            next(io_string) 
+            emails_to_create = []
+            invalid_emails = []
+            for row in csv.reader(io_string, delimiter=","):
+                email = row[0].strip()
+                if email:  
+                    try:
+                        validate_email(email)  
+                        if not NoticeEmail.objects.filter(email=email).exists():
+                            emails_to_create.append(NoticeEmail(email=email))
+                    except ValidationError:
+                        invalid_emails.append(email)
+
+            if emails_to_create:
+                NoticeEmail.objects.bulk_create(emails_to_create, ignore_conflicts=True)
+                messages.success(request, f"{len(emails_to_create)} valid emails uploaded successfully!")
+
+            if invalid_emails:
+                messages.warning(request, f"Invalid emails skipped: {', '.join(invalid_emails)}")
+            return redirect("customadmin:noticeemail")
+    else:
+        formscv = CSVUploadForm()
+
+    return render(request, "customadmin/bulkupload.html", {"form": formscv})
 
 def add_event(request,id=None):
     print('run')
@@ -236,7 +278,7 @@ def notice(request):
 
 def add_notice(request,id=None):
     print('run')
-    maillist=[i.email for i in NoticeEmail.objects.all()]
+    maillist = [i["email"] for i in NoticeEmail.objects.values("email").distinct()]
     print(maillist)
     if request.method == "POST":
         print('post')

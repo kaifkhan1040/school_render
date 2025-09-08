@@ -9,6 +9,7 @@ urlpatterns = [
 
     path('noticeemail/', views.noticeemail, name='noticeemail'),
     path('add-noticeemail/', views.add_noticeemail, name='add_noticeemail'),
+    path('bulk-upload/', views.bulk_upload_emails, name='bulk_upload_emails'),
     path('update-noticeemail/<int:id>/', views.add_noticeemail, name='update_noticeemail'),
     path('delete-noticeemail/<int:id>/', views.delete_noticeemail, name='delete_noticeemail'),
 
