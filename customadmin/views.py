@@ -225,7 +225,6 @@ def delete_course(request,id=None):
 def calendar_events(request):
     month = int(request.GET.get("month", 1))
     year = int(request.GET.get("year", 2025))
-
     events = Event.objects.filter(start_date__year=year, start_date__month=month).values('start_date','name','description')
     return JsonResponse(list(events), safe=False)
 
