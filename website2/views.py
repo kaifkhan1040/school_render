@@ -49,7 +49,9 @@ def index(request):
 
 def about(request):
     academics=Academics.objects.all()
-    return render(request,'web2/about.html',{'is_about':True,'academics':academics})
+    testimonie=Testimonie.objects.all()
+    testimonie_grouped = chunked(testimonie, 2)
+    return render(request,'web2/about.html',{'is_about':True,'academics':academics,'testimonie_grouped':testimonie_grouped})
 from django.utils.safestring import mark_safe
 
 
