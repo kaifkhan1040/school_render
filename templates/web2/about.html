@@ -83,7 +83,7 @@
         </h2>
         <p class="text-muted" style="font-size: 1.1rem;">
           
-        LittleStar public school is basically for little kids from the age group of 2.5yrs to11.5 yrs and here we are ready to be our future leaders. Our school, established in2021, is centrally located in the hi-tech city Gurugram and is a standard for learning services management. Our School's aim is "Your child deserves the best" that we provide the best learning experience to all the students, Theschool promoted a wide array of Co-Curricular activities like- Music, Dance,Dramatics, Art and Craft etc. All Children are naturally curious. From Birthof a child's life, is the most critical learning period which becomes a reference for all future behavior, experiences and personality development.
+        Little Star Public School is basically for little kids from the age group of 2.5yrs to11.5 yrs and here we are ready to be our future leaders. Our school, established in2021, is centrally located in the hi-tech city Gurugram and is a standard for learning services management. Our School's aim is "Your child deserves the best" that we provide the best learning experience to all the students, Theschool promoted a wide array of Co-Curricular activities like- Music, Dance,Dramatics, Art and Craft etc. All Children are naturally curious. From Birthof a child's life, is the most critical learning period which becomes a reference for all future behavior, experiences and personality development.
         </p>
         
       </div>
@@ -171,96 +171,30 @@
                                                     </style>
                                                     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-interval="10000">
+   {% for i in testimonie_grouped %}
+    <div class="carousel-item {% if forloop.first %}active {% endif %}" {% if forloop.first %} data-interval="10000" {% else %} data-interval="2000" {% endif %}>
+
       <section class="testimonial-section">
         <h2 class="testimonial-heading">Testimonies from the Heart</h2>
 
         <div class="testimonial-wrapper">
         <!-- Card 1 -->
+         {% for j in i %}
         <div class="testimonial-box">
-            <p>
-            As a parent, choosing the right school for my child was one of the most important decisions I had to make—and I’m incredibly thankful we chose Little Star Public School. From the very beginning, we felt welcomed by a warm and supportive environment that truly puts students first.
-            </p>
-            <p>
-            What sets the school apart is its emphasis on not just academic excellence, but also character building and holistic development. My child has grown remarkably—not only in knowledge, but in confidence, values, and social skills. The dedication of the teachers, the well-structured curriculum, and the focus on co-curricular activities have all played a vital role in shaping a well-rounded individual.
-            </p>
-            <p>
-                I’m especially impressed by the school’s transparent communication, safe campus, and the way each child is encouraged to reach their full potential. It's a place where students are not only taught how to succeed, but how to become kind, responsible citizens.        </p>
+            <p>{{j.message|safe}}</p>
             <div class="testimonial-profile">
-            <img src="{% static 'school/images/01_1.jpg' %}" alt="Ankita Singh">
-            <div class="profile-info">
-                <h4>Lakshmi Singh</h4>
-                <!-- <p>Advocate (Human Rights)</p> -->
-            </div>
+              <img src="{% if j.image %}{{j.image.url}}{% else %}{% static 'school/images/01_1.jpg' %}{% endif %}" alt="Ankita Singh">
+              <div class="profile-info">
+                  <h4>{{j.name}}</h4>
+                  <!-- <p>Advocate (Human Rights)</p> -->
+              </div>
             </div>
         </div>
-
-        <!-- Card 2 -->
-        <div class="testimonial-box">
-            <p>
-            As a parent, I wanted a school that would nurture my child both academically and personally. From the moment we joined [School Name], I knew we had made the right choice. The teachers are not only dedicated and knowledgeable but also genuinely care about the well-being of each student. My child has become more confident, curious, and responsible since starting here.
-            </p>
-            <p>
-            What I appreciate most is the school’s balanced approach to education—combining strong academics with arts, sports, and values-based learning. It’s a place where children feel safe, respected, and inspired to do their best every day. I’m truly grateful to the entire team at Little Star Public School for creating such a positive and enriching environment for our children.
-            </p>
-            
-            <div class="testimonial-profile">
-            <img src="{% static 'school/images/01_3.jpg' %}" alt="Ishan Popli">
-            <div class="profile-info">
-                <h4>Maya </h4>
-                <!-- <p>Symbiosis Law School (Student)<br>Class of 2019</p> -->
-            </div>
-            </div>
-        </div>
+        {% endfor %}
         </div>
         </section>
     </div>
-    <div class="carousel-item" data-interval="2000">
-     <section class="testimonial-section">
-        <h2 class="testimonial-heading">Testimonies from the Heart</h2>
-
-        <div class="testimonial-wrapper">
-        <!-- Card 1 -->
-        <div class="testimonial-box">
-            <p>
-            As a parent, choosing the right school for our child was one of the most important decisions we've made — and we couldn't be happier with our choice. From the very beginning, the school has provided a warm, welcoming, and nurturing environment where our child feels safe, supported, and inspired to learn.
-            </p>
-            <p>
-                The teachers are not only highly qualified, but also genuinely care about each student’s growth, both academically and personally. We’ve seen remarkable improvements in our child’s confidence, curiosity, and communication skills.            </p>
-            <p>
-                    We especially appreciate the school's focus on holistic development — balancing academics with extracurricular activities, life skills, and values. The open communication between parents and staff also makes us feel involved and valued as partners in our child’s education.             </p>
-            <div class="testimonial-profile">
-            <img src="{% static 'school/images/02_2.jpg' %}" alt="Ankita Singh">
-            <div class="profile-info">
-                <h4>Sonu Verma</h4>
-                <!-- <p>Advocate (Human Rights)</p> -->
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="testimonial-box">
-            <p>
-           Choosing the right school for our child was a significant decision, and we feel incredibly fortunate to have found such a wonderful institution. From the very first day, the school has exceeded our expectations in every way. The warm and friendly atmosphere makes both students and parents feel welcomed and valued.
-            </p>
-            <p>
-           The dedication and professionalism of the teachers are truly commendable. They not only focus on academic excellence but also emphasize the overall development of each child. Our child has grown in confidence, creativity, and social skills, thanks to the personalized attention and encouragement provided by the staff.
-            </p>
-            <p>
-                We highly recommend this school to any parent looking for a nurturing, stimulating, and well-rounded educational experience for their child.
-            </p>
-            
-            <div class="testimonial-profile">
-            <img src="{% static 'school/images/03_2.jpg' %}" alt="Ishan Popli">
-            <div class="profile-info">
-                <h4>Mohan Tomar </h4>
-                <!-- <p>Symbiosis Law School (Student)<br>Class of 2019</p> -->
-            </div>
-            </div>
-        </div>
-        </div>
-        </section>
-    </div>
+    {% endfor %}
     <!-- <div class="carousel-item">
       <img src="..." class="d-block w-100" alt="...">
     </div> -->

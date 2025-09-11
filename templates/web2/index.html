@@ -507,7 +507,7 @@ As the Principal, it brings me immense pride to lead a team of dedicated educato
     </div>
 
     <div class="calendar-right">
-      <h2 id="eventTitle">MAY, 2025</h2>
+	<h2 id="eventTitle">MAY, 2025</h2>     
       <div id="eventList">
         <!-- Populated by JS -->
       </div>
@@ -1247,6 +1247,24 @@ h2 {
   padding: 10px 20px;
   border-radius: 50px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 90%;   /* prevent overflow */
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .testimonial-profile {
+    bottom: -20px;         /* lift it up */
+    padding: 8px 12px;     /* reduce padding */
+    gap: 10px;             /* tighter gap */
+    font-size: 14px;       /* smaller text */
+    border-radius: 30px;   /* slightly smaller pill shape */
+  }
+   .testimonial-profile img {
+    width: 40px;   /* scale profile image */
+    height: 40px;
+  }
+  .testimonial-box{
+    padding:30px 23px 160px
+  }
 }
 
 .testimonial-profile img {

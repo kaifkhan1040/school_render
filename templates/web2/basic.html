@@ -5444,7 +5444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <i class="flaticon-message"></i>
                                     <div class="media-body space-sm">
                                         <p class="title">Email</p>
-                                        <div class="subtitle">Littlestarpre03@gmail.com </div>
+                                        <div class="subtitle">info@lspsgurugram.in</div>
                                     </div>
                                 </div>
                             </div>
@@ -5500,49 +5500,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10341">
-                                                    <a href="#">Academics</a>
+                                                    <a href="#">Academic & More</a>
                                                     <ul class="sub-menu">
                                                         {% for academic in academics %}
-                                                         {% if academic.subacademics_set.exists %}
-                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                                                        {% if academic.file %}
-                                                            <a href="{{ academic.file.url }}" download>{{ academic.name }}</a>
-                                                        {% else %}
-                                                            <a href="#">{{ academic.name }}</a>
-                                                        {% endif %}
-                                                        <ul class="sub-menu">
-                                                            {% for sub in academic.subacademics_set.all %}
-                                                            {% if sub.academicsitem_set.exists %}
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-                                                                {% if sub.file %}
-                                                                    <a href="{{ sub.file.url }}" download>{{ sub.name }}</a>
-                                                                {% else %}
-                                                                    <a href="#">{{ sub.name }}</a>
-                                                                {% endif %}
-                                                                <ul class="sub-menu">
-                                                                {% for item in sub.academicsitem_set.all %}
-                                                                    <li class="menu-item">
-                                                                        {% if item.file %}
-                                                                        <a href="{{ item.file.url }}" download>{{ item.name }}</a>
-                                                                        {% else %}
-                                                                        <a href="#">{{ item.name }}</a>
-                                                                        {% endif %}
-                                                                    </li>
-                                                                    {% endfor %}
-                                                                </ul>
-                                                            </li>
-                                                            {% else %}
-                                                            <li class="menu-item"><a href="#">{{ sub.name }}</a></li>
-                                                            {% endif %}
-                                                            {% endfor %}
-                                                        </ul>
-                                                        </li>
-                                                        {% else %}
-                                                         <li class="menu-item"><a href="#">{{academic.name}}</a></li>
-                                                         {% endif %}
-                                                        {% endfor %}
+    {% if academic.subacademics.exists %}
+        <li class="menu-item menu-item-has-children">
+            {% if academic.file %}
+                <a href="{{ academic.file.url }}" download>{{ academic.name }}</a>
+            {% else %}
+                <a href="#">{{ academic.name }}</a>
+            {% endif %}
+            <ul class="sub-menu">
+                {% for sub in academic.subacademics.all %}
+                    {% if sub.items.exists %}
+                        <li class="menu-item menu-item-has-children">
+                            {% if sub.file %}
+                                <a href="{{ sub.file.url }}" download>{{ sub.name }}</a>
+                            {% else %}
+                                <a href="#">{{ sub.name }}</a>
+                            {% endif %}
+                            <ul class="sub-menu">
+                                {% for item in sub.items.all %}
+                                    <li class="menu-item">
+                                        {% if item.file %}
+                                            <a href="{{ item.file.url }}" download>{{ item.name }}</a>
+                                        {% else %}
+                                            <a href="#">{{ item.name }}</a>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="menu-item">
+                            {% if sub.file %}
+                                <a href="{{ sub.file.url }}" download>{{ sub.name }}</a>
+                            {% else %}
+                                <a href="#">{{ sub.name }}</a>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li class="menu-item">
+            {% if academic.file %}
+                <a href="{{ academic.file.url }}" download>{{ academic.name }}</a>
+            {% else %}
+                <a href="#">{{ academic.name }}</a>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}
 
+                                                        
                                                     </ul>
+                                                                       </ul>
                                                 </li>
                                                 <!-- <li id="menu-item-10341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10341"><a href="https://ked.edu.in/beyond-academics/">Beyond Academics</a>
                                                     <ul class="sub-menu">
@@ -5645,7 +5659,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                                                 </h3>
 
                                                                                 <p class="elementor-icon-box-description">
-                                                                                    Littlestarpre03@gmail.com </p>
+                                                                                  info@lspsgurugram.in </p>
 
                                                                             </div>
 
@@ -7100,7 +7114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "meanWidth": "1200",
             "is_rtl": "",
             "logo": "https:\/\/ked.edu.in\/wp-content\/uploads\/2024\/03\/ked-india.png",
-            "siteLogo": "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='#'><img alt='Little Star Public School' src='{% static 'school/images/logo_new1.png' %}' class='img-fluid'\/><\/a><\/div>",
+            "siteLogo": "<div class='mobile-menu-nav-back'><a class='logo-mobile' style='text-decoration:none;color:black' href='#'><img alt='Little Star Public School' src='{% static 'school/images/logo_new1.png' %}' class='img-fluid'\/>Little Star Public School<\/a><\/div>",
             "appendHtml": "",
             "hasBackToTopArrow": "1",
             "hasStickyMenu": "1"
