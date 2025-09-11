@@ -15,13 +15,16 @@ from .forms import CSVUploadForm
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 # Create your views here.
+@login_required
 def index(request):
     return render(request,'customadmin/index.html')
 
+@login_required
 def noticeemail(request):
     event = NoticeEmail.objects.all()
     return render(request,'customadmin/noticeemaillist.html',{'event':event})
 
+@login_required
 def add_noticeemail(request,id=None):
     print('run')
     if request.method == "POST":
@@ -52,6 +55,7 @@ def add_noticeemail(request,id=None):
 
     return render(request, 'customadmin/noticeemail_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_noticeemail(request,id=None):
     if id:
         obj = get_object_or_404(NoticeEmail, id=id)
@@ -60,10 +64,12 @@ def delete_noticeemail(request,id=None):
         messages.success(request, f'NoticeEmail has been removed successfully!')
         return redirect('customadmin:noticeemail')
 
+@login_required
 def event(request):
     event = Event.objects.all()
     return render(request,'customadmin/eventlist.html',{'event':event})
 
+@login_required
 def bulk_upload_emails(request):
     if request.method == "POST":
         formscv = CSVUploadForm(request.POST, request.FILES)
@@ -102,6 +108,7 @@ def bulk_upload_emails(request):
 
     return render(request, "customadmin/bulkupload.html", {"form": formscv})
 
+@login_required
 def add_event(request,id=None):
     print('run')
     if request.method == "POST":
@@ -132,6 +139,7 @@ def add_event(request,id=None):
 
     return render(request, 'customadmin/event_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_event(request,id=None):
     if id:
         obj = get_object_or_404(Event, id=id)
@@ -141,10 +149,12 @@ def delete_event(request,id=None):
         return redirect('customadmin:enent')
 
 
+@login_required
 def gallery(request):
     gallery = Gallery.objects.all()
     return render(request,'customadmin/gallery.html',{'gallery':gallery})
 
+@login_required
 def add_gallery(request,id=None):
     print('run')
     if request.method == "POST":
@@ -187,6 +197,7 @@ def add_gallery(request,id=None):
 
     return render(request, 'customadmin/gallery_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_gallery(request,id=None):
     if id:
         obj = get_object_or_404(Gallery, id=id)
@@ -195,11 +206,13 @@ def delete_gallery(request,id=None):
         messages.success(request, f'Gallery has been removed successfully!')
         return redirect('customadmin:gallery')
 
+@login_required
 def contactus(request):
     contactus = Contactus.objects.all().order_by("-id")
     return render(request,'customadmin/contact.html',{'contactus':contactus})
 
 
+@login_required
 def delete_contactus(request,id=None):
     if id:
         obj = get_object_or_404(Contactus, id=id)
@@ -208,6 +221,7 @@ def delete_contactus(request,id=None):
         messages.success(request, f'Contact has been removed successfully!')
         return redirect('customadmin:contactus')
 
+@login_required
 def view_contactus(request,id=None):
     # print('run')
     form=None
@@ -218,10 +232,12 @@ def view_contactus(request,id=None):
     return render(request, 'customadmin/contact_view.html', {'form': form,'obj':obj})
 
 
+@login_required
 def course(request):
     course = Course.objects.all()
     return render(request,'customadmin/course.html',{'course':course})
 
+@login_required
 def add_course(request,id=None):
     print('run')
     if request.method == "POST":
@@ -255,6 +271,7 @@ def add_course(request,id=None):
 
     return render(request, 'customadmin/course_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_course(request,id=None):
     if id:
         obj = get_object_or_404(Course, id=id)
@@ -264,6 +281,7 @@ def delete_course(request,id=None):
         return redirect('customadmin:course')
 
 
+@login_required
 def calendar_events(request):
     month = int(request.GET.get("month", 1))
     year = int(request.GET.get("year", 2025))
@@ -272,10 +290,12 @@ def calendar_events(request):
 
 
 
+@login_required
 def notice(request):
     notice = Notice.objects.all()
     return render(request,'customadmin/notice.html',{'notice':notice})
 
+@login_required
 def add_notice(request,id=None):
     print('run')
     maillist = [i["email"] for i in NoticeEmail.objects.values("email").distinct()]
@@ -315,6 +335,7 @@ def add_notice(request,id=None):
 
     return render(request, 'customadmin/notice_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_notice(request,id=None):
     if id:
         obj = get_object_or_404(Notice, id=id)
@@ -324,10 +345,12 @@ def delete_notice(request,id=None):
         return redirect('customadmin:notice')
 
 
+@login_required
 def testimonial(request):
     testimonie = Testimonie.objects.all()
     return render(request,'customadmin/testimonie.html',{'testimonie':testimonie})
 
+@login_required
 def add_testimonial(request,id=None):
     print('run')
     if request.method == "POST":
@@ -361,6 +384,7 @@ def add_testimonial(request,id=None):
 
     return render(request, 'customadmin/testimonie_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_testimonial(request,id=None):
     if id:
         obj = get_object_or_404(Testimonie, id=id)
@@ -370,10 +394,12 @@ def delete_testimonial(request,id=None):
         return redirect('customadmin:testimonial')
 
 
+@login_required
 def our_vission_mission(request):
     data = MissionAndVission.objects.all()
     return render(request,'customadmin/vission.html',{'data':data})
 
+@login_required
 def add_our_vission_mission(request,id=None):
     print('run')
     if request.method == "POST":
@@ -407,6 +433,7 @@ def add_our_vission_mission(request,id=None):
 
     return render(request, 'customadmin/vission_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_our_vission_mission(request,id=None):
     if id:
         obj = get_object_or_404(MissionAndVission, id=id)
@@ -415,10 +442,12 @@ def delete_our_vission_mission(request,id=None):
         messages.success(request, f'Mission And Vission has been removed successfully!')
         return redirect('customadmin:our_vission_mission')
 
+@login_required
 def academics(request):
     academics = Academics.objects.all()
     return render(request,'customadmin/academics.html',{'academics':academics})
 
+@login_required
 def add_academics(request,id=None):
     print('run')
     if request.method == "POST":
@@ -452,6 +481,7 @@ def add_academics(request,id=None):
 
     return render(request, 'customadmin/academics_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_academics(request,id=None):
     if id:
         obj = get_object_or_404(Academics, id=id)
@@ -461,10 +491,12 @@ def delete_academics(request,id=None):
         return redirect('customadmin:academics')
 
 
+@login_required
 def subacademics(request):
     subAcademics = SubAcademics.objects.all()
     return render(request,'customadmin/subAcademics.html',{'subAcademics':subAcademics})
 
+@login_required
 def add_subacademics(request,id=None):
     print('run')
     if request.method == "POST":
@@ -498,6 +530,7 @@ def add_subacademics(request,id=None):
 
     return render(request, 'customadmin/subacademics_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_subacademics(request,id=None):
     if id:
         obj = get_object_or_404(SubAcademics, id=id)
@@ -506,10 +539,12 @@ def delete_subacademics(request,id=None):
         messages.success(request, f'SubAcademics has been removed successfully!')
         return redirect('customadmin:subacademics')
 
+@login_required
 def academicsitem(request):
     subAcademics = AcademicsItem.objects.all()
     return render(request,'customadmin/Academicsitem.html',{'subAcademics':subAcademics})
 
+@login_required
 def add_academicsitem(request,id=None):
     print('run')
     if request.method == "POST":
@@ -543,6 +578,7 @@ def add_academicsitem(request,id=None):
 
     return render(request, 'customadmin/Academicsitem_add.html', {'form': form,'obj':obj})
 
+@login_required
 def delete_academicsitem(request,id=None):
     if id:
         obj = get_object_or_404(AcademicsItem, id=id)
